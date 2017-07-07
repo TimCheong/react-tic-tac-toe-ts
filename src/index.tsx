@@ -6,17 +6,13 @@ interface SquareProps {
     value: string,
     onClick: () => void
 }
-interface SquareState {
-}
 
-class Square extends React.Component<SquareProps, SquareState> {
-    render() {
-        return (
-            <button className="square" onClick={() => this.props.onClick()}>
-                {this.props.value}
-            </button>
-        );
-    }
+function Square(props: SquareProps): JSX.Element {
+    return (
+        <button className="square" onClick={() => props.onClick()}>
+            {props.value}
+        </button>
+    );
 }
 
 interface BoardState {
