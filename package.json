@@ -1,8 +1,7 @@
 {
-  "name": "react-goita-board",
-  "version": "0.0.1",
-  "description": "goita board",
-  "main": "index.js",
+  "name": "react-tic-tac-toe-ts",
+  "version": "1.0.0",
+  "description": "React Tic-Tac-Toe TypeScript",
   "scripts": {
     "webpack": "webpack",
     "start": "webpack-dev-server",
@@ -10,7 +9,8 @@
   },
   "keywords": [
     "tic-tac-toe",
-    "react"
+    "react",
+    "typescript"
   ],
   "author": "yoskeoka",
   "license": "MIT",
