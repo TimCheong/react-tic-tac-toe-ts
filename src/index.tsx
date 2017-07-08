@@ -17,6 +17,7 @@ function Square(props: SquareProps): JSX.Element {
 
 interface BoardState {
     squares: string[],
+    xIsNext: boolean
 }
 
 class Board extends React.Component<{}, BoardState> {
@@ -25,14 +26,15 @@ class Board extends React.Component<{}, BoardState> {
         const sqrs = Array<string>(9);
         sqrs.forEach((_, i, array) => array[i] = null);
         this.state = {
-            squares: sqrs
+            squares: sqrs,
+            xIsNext: true,
         }
     }
 
     handleClick(i: number) {
         const squares = this.state.squares.slice();
-        squares[i] = "X";
-        this.setState({ squares: squares });
+        squares[i] = this.state.xIsNext ? "X" : "O";
+        this.setState({ squares: squares, xIsNext: !this.state.xIsNext });
     }
 
     renderSquare(i: number) {
@@ -43,7 +45,7 @@ class Board extends React.Component<{}, BoardState> {
     }
 
     render() {
-        const status = 'Next player: X';
+        const status = 'Next player: ' + (this.state.xIsNext ? "X" : "O");
 
         return (
             <div>
